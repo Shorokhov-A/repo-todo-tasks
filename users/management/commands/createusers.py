@@ -27,6 +27,6 @@ class Command(BaseCommand):
 
         for username, first_name, last_name, email in zip(usernames_arr, first_names_arr, last_names_arr, email_arr):
             try:
-                User.objects.create_user(username, email, user_password)
+                User.objects.create_user(username, email, user_password, first_name=first_name, last_name=last_name)
             except Exception as e:
                 print(f'Ошибка: {e}')
